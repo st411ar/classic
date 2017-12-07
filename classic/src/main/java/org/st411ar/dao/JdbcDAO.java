@@ -26,8 +26,13 @@ public class JdbcDAO implements DAO {
     private static final String ORDERS_QUERY = "select id, user_id, book_id from orders";
 
 
-    public JdbcDAO() throws ClassNotFoundException {
-        Class.forName(DRIVER);
+    public JdbcDAO() {
+        try {
+            Class.forName(DRIVER);
+        } catch (ClassNotFoundException e) {
+            System.out.println( "can't find jdbc driver class" );
+            e.printStackTrace();
+        }
     }
 
 
@@ -182,4 +187,9 @@ public class JdbcDAO implements DAO {
 
         return orders;
 	}
+
+    @Override
+    public String toString() {
+        return "jdbc dao";
+    }
 }

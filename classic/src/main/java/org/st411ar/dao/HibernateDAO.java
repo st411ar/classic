@@ -41,4 +41,9 @@ public class HibernateDAO implements DAO {
         session.getTransaction().commit();
         return orders;
 	}
+
+    @Override
+    public String toString() {
+        return "hibernate dao";
+    }
 }

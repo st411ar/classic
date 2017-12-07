@@ -4,43 +4,31 @@ package org.st411ar;
 import java.util.List;
 
 
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+
 import org.st411ar.dao.*;
 import org.st411ar.entity.*;
+import org.st411ar.factory.Factory;
 
 
 public class App {
 
     public static void main( String[] args ) {
-        testJdbc();
-        testHibernate();
+        testDao(new JdbcDAO());
+        testDao(new HibernateDAO());
+
+        String[] configs = new String[]{"spring.cfg.xml"};
+        FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(configs);
+        Factory factory = (Factory) context.getBean("factory");
+        DAO dao = factory.getDao();
+        testDao(dao);
     }
 
-    private static void testJdbc() {
-        System.out.println( "testJdbc() has been started" );
-        try {
-            DAO dao = new JdbcDAO();
-
-            for (User user : dao.getUsers()) {
-                System.out.println(user);
-            }
-            for (Book book : dao.getBooks()) {
-                System.out.println(book);
-            }
-
-            for (Order order : dao.getOrders()) {
-                System.out.println(order);
-            }
-        } catch (ClassNotFoundException e) {
-            System.out.println( "can't find jdbc driver class" );
-            e.printStackTrace();
-        }
-        System.out.println( "testJdbc() has been finished" );
-    }
-
-    private static void testHibernate() {
-        System.out.println( "testHibernate() has been started" );
-        DAO dao = new HibernateDAO();
-
+    private static void testDao(DAO dao) {
+        System.out.println("-----------");
+        System.out.println(dao);
+        System.out.println("-----------");
         for (User user : dao.getUsers()) {
             System.out.println(user);
         }
@@ -51,7 +39,5 @@ public class App {
         for (Order order : dao.getOrders()) {
             System.out.println(order);
         }
-
-        System.out.println( "testHibernate() has been finished" );
     }
 }
