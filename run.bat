@@ -1,0 +1,1 @@
+java -jar classic/bin/classic-0.0.1-SNAPSHOT.jar
