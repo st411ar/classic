@@ -1,6 +1,6 @@
 package org.st411ar.entity;
 
-public class User {
+public class Book {
 	private long id;
 	private String name;
 
