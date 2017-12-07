@@ -29,8 +29,8 @@
         <property name="show_sql">true</property>
  
       <!-- Mapping files -->
-        <mapping resource="org/st411ar/entity/User.hbm.xml"/>
-        <mapping resource="org/st411ar/entity/Book.hbm.xml"/>
+        <mapping class="org.st411ar.entity.User"/>
+        <mapping class="org.st411ar.entity.Book"/>
         <mapping resource="org/st411ar/entity/Order.hbm.xml"/>
  
     </session-factory>
