@@ -4,14 +4,25 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
     http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
  
+
     <bean name="factory" class="org.st411ar.factory.Factory">
-        <property name="dao" ref="jdbcDao"/>
+        <property name="dao" ref="hibernateDao"/>
     </bean>
  
-    <bean name="hibernateDao" class="org.st411ar.dao.HibernateDAO">
-    </bean>
+    <bean name="hibernateDao" class="org.st411ar.dao.HibernateDAO"></bean>
  
-    <bean name="jdbcDao" class="org.st411ar.dao.JdbcDAO">
+    <bean name="jdbcDao" class="org.st411ar.dao.JdbcDAO"></bean>
+ 
+
+	<bean name="interceptor" class="org.st411ar.dao.Interceptor"></bean>
+
+    <bean name="factoryProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="factory"/>
+        <property name="interceptorNames">
+            <list>
+                <value>interceptor</value>
+            </list>
+        </property>
     </bean>
  
 </beans>

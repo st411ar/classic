@@ -20,7 +20,7 @@ public class App {
 
         String[] configs = new String[]{"spring.cfg.xml"};
         FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(configs);
-        Factory factory = (Factory) context.getBean("factory");
+        Factory factory = (Factory) context.getBean("factoryProxy");
         DAO dao = factory.getDao();
         testDao(dao);
     }
