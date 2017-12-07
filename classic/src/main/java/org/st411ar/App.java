@@ -1,10 +1,22 @@
 package org.st411ar;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import java.util.List;
+
+
+import org.hibernate.Session;
+
+
+import org.st411ar.entity.User;
+
+import org.st411ar.util.HibernateUtil;
+
 
 public class App {
 
@@ -17,10 +29,8 @@ public class App {
     private static final String USERS_QUERY = "select id, name from users";
 
     public static void main( String[] args ) {
-        System.out.println( "program has been started" );
         testSimpleJDBC();
         testHibernate();
-        System.out.println( "program has been finished" );
     }
 
     private static void testSimpleJDBC() {
@@ -65,7 +75,18 @@ public class App {
 
     private static void testHibernate() {
         System.out.println( "testHibernate() has been started" );
-        System.out.println("Hibernate is not configured");
+        List<User> users = getUsers();
+        for (User user : users) {
+            System.out.println("id: '" + user.getId() + "', name: '" + user.getName() + "'");
+        }
         System.out.println( "testHibernate() has been finished" );
+    }
+
+    private static List<User> getUsers() {
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        List<User> users = session.createQuery("from User").list();
+        session.getTransaction().commit();
+        return users;
     }
 }

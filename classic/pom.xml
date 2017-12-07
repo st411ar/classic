@@ -21,6 +21,34 @@
       <version>5.1.45</version>
       <scope>runtime</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>3.3.1.GA</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.5.3</version>
+      <!--scope>test</scope-->
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javassist/javassist -->
+    <dependency>
+      <groupId>javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>3.4.GA</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -31,12 +59,10 @@
 
   <build>
   	<plugins>
-  	  <plugin>
+      <plugin>
   	    <artifactId>maven-assembly-plugin</artifactId>
   	    <version>3.1.0</version>
   	    <configuration>
-  	      <outputDirectory>bin</outputDirectory>
-  	      <appendAssemblyId>false</appendAssemblyId>
   	      <descriptorRefs>
   	        <descriptorRef>jar-with-dependencies</descriptorRef>
   	      </descriptorRefs>

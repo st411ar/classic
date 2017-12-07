@@ -1,1 +1,1 @@
-java -jar classic/bin/classic-0.0.1-SNAPSHOT.jar
+java -jar classic/target/classic-0.0.1-SNAPSHOT-jar-with-dependencies.jar
