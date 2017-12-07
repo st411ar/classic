@@ -31,7 +31,7 @@
       <!-- Mapping files -->
         <mapping class="org.st411ar.entity.User"/>
         <mapping class="org.st411ar.entity.Book"/>
-        <mapping resource="org/st411ar/entity/Order.hbm.xml"/>
+        <mapping class="org.st411ar.entity.Order"/>
  
     </session-factory>
  
