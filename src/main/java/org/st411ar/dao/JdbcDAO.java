@@ -39,13 +39,11 @@ public class JdbcDAO implements DAO {
 	public List<User> getUsers() {
         List<User> users = new ArrayList<>();
 
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-        try {
-            connection = DriverManager.getConnection(URI, NAME, PASSWORD);
-            statement = connection.createStatement();
-            resultSet = statement.executeQuery(USERS_QUERY);
+        try (
+                Connection connection = DriverManager.getConnection(URI, NAME, PASSWORD);
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(USERS_QUERY);
+        ) {
             while (resultSet.next()) {
                 long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
@@ -60,21 +58,6 @@ public class JdbcDAO implements DAO {
             System.out.println("SQLException has been caught");
             e.printStackTrace();
             return new ArrayList<User>();
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                System.out.println("finally SQLException has been caught");
-                e.printStackTrace();
-            }
         }
 
         return users;
@@ -83,13 +66,11 @@ public class JdbcDAO implements DAO {
 	public List<Book> getBooks() {
         List<Book> books = new ArrayList<>();
 
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-        try {
-            connection = DriverManager.getConnection(URI, NAME, PASSWORD);
-            statement = connection.createStatement();
-            resultSet = statement.executeQuery(BOOKS_QUERY);
+        try (
+                Connection connection = DriverManager.getConnection(URI, NAME, PASSWORD);
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(BOOKS_QUERY);
+        ) {
             while (resultSet.next()) {
                 long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
@@ -104,21 +85,6 @@ public class JdbcDAO implements DAO {
             System.out.println("SQLException has been caught");
             e.printStackTrace();
             return new ArrayList<Book>();
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                System.out.println("finally SQLException has been caught");
-                e.printStackTrace();
-            }
         }
 
         return books;
@@ -130,15 +96,11 @@ public class JdbcDAO implements DAO {
         List<User> users = getUsers();
         List<Book> books = getBooks();
 
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-        try {
-            connection = DriverManager.getConnection(URI, NAME, PASSWORD);
-            statement = connection.createStatement();
-            resultSet = statement.executeQuery(ORDERS_QUERY);
-
-
+        try (
+                Connection connection = DriverManager.getConnection(URI, NAME, PASSWORD);
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(ORDERS_QUERY);
+        ) {
             while (resultSet.next()) {
                 long id = resultSet.getLong("id");
                 long userId = resultSet.getLong("user_id");
@@ -168,21 +130,6 @@ public class JdbcDAO implements DAO {
             System.out.println("SQLException has been caught");
             e.printStackTrace();
             return new ArrayList<Order>();
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                System.out.println("finally SQLException has been caught");
-                e.printStackTrace();
-            }
         }
 
         return orders;
