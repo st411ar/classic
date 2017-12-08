@@ -18,9 +18,9 @@ public class App {
         testDao(new JdbcDAO());
         testDao(new HibernateDAO());
 
-        String[] configs = new String[]{"spring.cfg.xml"};
+        String[] configs = new String[]{"spring.cfg.xml", "db.cfg.xml"};
         FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(configs);
-        Factory factory = (Factory) context.getBean("factoryProxy");
+        Factory factory = (Factory) context.getBean("factoryTransactionProxy");
         DAO dao = factory.getDao();
         testDao(dao);
     }
