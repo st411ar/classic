@@ -12,11 +12,11 @@ public class Order {
 	@Column(name="id")
 	private long id;
 
-    @ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
-    @JoinColumn(name="user_id")
+    @ManyToOne
+    @PrimaryKeyJoinColumn
    	private User user;
 
-    @ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)
-    @JoinColumn(name="book_id")
+    @OneToOne(fetch=FetchType.LAZY)
+    @PrimaryKeyJoinColumn
 	private Book book;
 }

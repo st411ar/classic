@@ -30,17 +30,7 @@ public class HibernateTransactionDAO implements DAO {
 	}
 
 	public List<Order> getOrders() {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
-        List<Order> orders = session.createQuery("from Order").list();
-        for (Order order : orders) {
-            Hibernate.initialize(order.getUser());
-            Hibernate.initialize(order.getBook());
-        }
-        session.getTransaction().commit();
-        return orders;
-        // problem with lazy initialization
-        // return template.find("from Order");
+        return template.find("from Order");
 	}
 
 }

@@ -62,11 +62,16 @@ CREATE TABLE orders (
 INSERT INTO users (name) VALUES ('Эдгар Рыбак');
 INSERT INTO users (name) VALUES ('Татьяна Ковальчук');
 INSERT INTO users (name) VALUES ('Екатерина Басюк');
+INSERT INTO users (name) VALUES ('Виталий Киселёв');
 
 INSERT INTO books (name) VALUES ('Философия JAVA');
 INSERT INTO books (name) VALUES ('Совершенный код');
 INSERT INTO books (name) VALUES ('Экстремальное программирование');
+INSERT INTO books (name) VALUES ('Java. Библиотека профессионала. Т.1');
+INSERT INTO books (name) VALUES ('Java. Библиотека профессионала. Т.2');
 
 INSERT INTO orders (user_id, book_id) VALUES (1, 1);
 INSERT INTO orders (user_id, book_id) VALUES (2, 2);
 INSERT INTO orders (user_id, book_id) VALUES (3, 3);
+INSERT INTO orders (user_id, book_id) VALUES (4, 4);
+INSERT INTO orders (user_id, book_id) VALUES (4, 5);
