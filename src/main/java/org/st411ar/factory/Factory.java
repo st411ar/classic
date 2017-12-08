@@ -1,15 +1,9 @@
 package org.st411ar.factory;
 
+import lombok.Data;
 import org.st411ar.dao.DAO;
 
+@Data
 public class Factory {
 	private DAO dao;
-
-	public void setDao(DAO dao) {
-		this.dao = dao;
-	}
-
-	public DAO getDao() {
-		return dao;
-	}
 }

@@ -2,6 +2,7 @@ package org.st411ar.dao;
 
 
 import java.util.List;
+import lombok.Data;
 
 
 import org.hibernate.Hibernate;
@@ -12,7 +13,7 @@ import org.st411ar.entity.*;
 
 import org.st411ar.util.HibernateUtil;
 
-
+@Data
 public class HibernateDAO implements DAO {
 	public List<User> getUsers() {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -41,9 +42,4 @@ public class HibernateDAO implements DAO {
         session.getTransaction().commit();
         return orders;
 	}
-
-    @Override
-    public String toString() {
-        return "hibernate dao";
-    }
 }

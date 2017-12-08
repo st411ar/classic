@@ -2,6 +2,7 @@ package org.st411ar.dao;
 
 
 import java.util.List;
+import lombok.Data;
 
 
 import org.hibernate.Hibernate;
@@ -14,14 +15,10 @@ import org.st411ar.entity.*;
 
 import org.st411ar.util.HibernateUtil;
 
-
+@Data
 public class HibernateTransactionDAO implements DAO {
 
 	private HibernateTemplate template;
-
-    public void setTemplate(HibernateTemplate template) {
-        this.template = template;
-    }
 
 
 	public List<User> getUsers() {
@@ -46,8 +43,4 @@ public class HibernateTransactionDAO implements DAO {
         // return template.find("from Order");
 	}
 
-    @Override
-    public String toString() {
-        return "hibernate transaction dao";
-    }
 }

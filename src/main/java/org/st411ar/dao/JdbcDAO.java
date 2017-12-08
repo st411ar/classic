@@ -3,9 +3,8 @@ package org.st411ar.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 import java.sql.*;
+import lombok.Data;
 
 
 import org.st411ar.entity.*;
@@ -13,6 +12,7 @@ import org.st411ar.entity.*;
 import org.st411ar.util.HibernateUtil;
 
 
+@Data
 public class JdbcDAO implements DAO {
 
     private static final String DRIVER = "com.mysql.jdbc.Driver";
@@ -187,9 +187,4 @@ public class JdbcDAO implements DAO {
 
         return orders;
 	}
-
-    @Override
-    public String toString() {
-        return "jdbc dao";
-    }
 }
