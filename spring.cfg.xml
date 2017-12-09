@@ -5,23 +5,23 @@
     http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
  
 
-    <bean name="factory" class="org.st411ar.factory.Factory">
+    <bean name="factory" class="org.st411ar.papers.factory.Factory">
         <property name="dao" ref="hibernateTransactionDao"/>
     </bean>
 
  
-    <bean name="jdbcDao" class="org.st411ar.dao.JdbcDAO"></bean>
+    <bean name="jdbcDao" class="org.st411ar.papers.dao.JdbcDAO"></bean>
 
-    <bean name="hibernateDao" class="org.st411ar.dao.HibernateDAO"></bean>
+    <bean name="hibernateDao" class="org.st411ar.papers.dao.HibernateDAO"></bean>
 
-    <bean name="hibernateTransactionDao" class="org.st411ar.dao.HibernateTransactionDAO">
+    <bean name="hibernateTransactionDao" class="org.st411ar.papers.dao.HibernateTransactionDAO">
         <property name="template" ref="hibernateTemplate" />
     </bean>
  
 
     <bean name="factoryTransactionProxy" parent="abstractTransactionProxy">
         <property name="target">
-            <bean class="org.st411ar.factory.Factory">
+            <bean class="org.st411ar.papers.factory.Factory">
                 <property name="dao" ref="hibernateTransactionDao" />
             </bean>
         </property>

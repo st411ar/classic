@@ -1,4 +1,4 @@
-package org.st411ar;
+package org.st411ar.papers;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

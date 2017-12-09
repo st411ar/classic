@@ -1,23 +1,22 @@
-package org.st411ar.dao;
-
+package org.st411ar.papers.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 import lombok.Data;
 
-
-import org.st411ar.entity.*;
-
-import org.st411ar.util.HibernateUtil;
-
+import org.st411ar.papers.entity.*;
+import org.st411ar.papers.util.HibernateUtil;
 
 @Data
 public class JdbcDAO implements DAO {
 
     private static final String DRIVER = "com.mysql.jdbc.Driver";
 
-    private static final String URI = "jdbc:mysql://127.0.0.1:3306/classic";
+    private static final String HOST = "jdbc:mysql://127.0.0.1:3306/";
+    private static final String DB = "papers";
+
+    private static final String URI = HOST + DB;
     private static final String NAME = "root";
     private static final String PASSWORD = "qwerty";
 

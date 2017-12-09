@@ -1,4 +1,4 @@
-package org.st411ar;
+package org.st411ar.papers;
 
 
 import java.util.List;
@@ -7,9 +7,9 @@ import java.util.List;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 
-import org.st411ar.dao.*;
-import org.st411ar.entity.*;
-import org.st411ar.factory.Factory;
+import org.st411ar.papers.dao.*;
+import org.st411ar.papers.entity.*;
+import org.st411ar.papers.factory.Factory;
 
 
 public class App {

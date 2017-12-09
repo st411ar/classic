@@ -11,13 +11,13 @@ http://java-course.ru/student/book2/
   * server host is `127.0.0.1` or `localhost`
   * server port is `3306`
   * server root password is `qwerty`
-  * db name will be `classic`
+  * db name will be `papers`
 
 
 ## Usage
 ### deploy
-`mysql --user=root --password=qwerty < classic.sql`
+`mysql --user=root --password=qwerty < deploy.sql`
 ### build
 `mvn clean package`
 ### run
-`java -jar target/classic-0.0.1-SNAPSHOT-jar-with-dependencies.jar`
+`java -jar target/papers-0.0.1-SNAPSHOT-jar-with-dependencies.jar`

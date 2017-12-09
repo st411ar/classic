@@ -1,12 +1,12 @@
-package org.st411ar.entity;
+package org.st411ar.papers.entity;
 
 import javax.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name="books")
-public class Book {
+@Table(name="users")
+public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")

@@ -1,4 +1,4 @@
-package org.st411ar.entity;
+package org.st411ar.papers.entity;
 
 import javax.persistence.*;
 import lombok.Data;

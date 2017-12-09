@@ -1,4 +1,4 @@
-package org.st411ar.util;
+package org.st411ar.papers.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;

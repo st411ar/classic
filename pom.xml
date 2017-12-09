@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.st411ar</groupId>
-  <artifactId>classic</artifactId>
+  <artifactId>papers</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>classic</name>
+  <name>papers</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -109,7 +109,7 @@
   	      </descriptorRefs>
   	      <archive>
   	        <manifest>
-  	          <mainClass>org.st411ar.App</mainClass>
+  	          <mainClass>org.st411ar.papers.App</mainClass>
   	        </manifest>
   	      </archive>
   	    </configuration>

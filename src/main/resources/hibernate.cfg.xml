@@ -9,7 +9,7 @@
  
       <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/classic</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/papers</property>
         <property name="connection.username">root</property>
         <property name="connection.password">qwerty</property>
  
@@ -29,9 +29,9 @@
         <property name="show_sql">true</property>
  
       <!-- Mapping files -->
-        <mapping class="org.st411ar.entity.User"/>
-        <mapping class="org.st411ar.entity.Book"/>
-        <mapping class="org.st411ar.entity.Order"/>
+        <mapping class="org.st411ar.papers.entity.User"/>
+        <mapping class="org.st411ar.papers.entity.Book"/>
+        <mapping class="org.st411ar.papers.entity.Order"/>
  
     </session-factory>
  

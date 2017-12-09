@@ -5,13 +5,13 @@
 -- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- SET FOREIGN_KEY_CHECKS=0;
 
-DROP DATABASE IF EXISTS classic;
+DROP DATABASE IF EXISTS papers;
 
-CREATE DATABASE classic 
+CREATE DATABASE papers 
     DEFAULT CHARACTER SET 'utf8' 
     DEFAULT COLLATE 'utf8_unicode_ci';
 
-USE classic;
+USE papers;
 
 -- ---
 -- Table 'users'
