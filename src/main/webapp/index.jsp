@@ -5,9 +5,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Index / Main / Home Page</title>
+        <title>Paper Library</title>
     </head>
     <body>
-        <h1>Index / Main / Home Page</h1>
+        <h1>Paper Library</h1>
+        <a href="orders.ppr">Orders</a>
     </body>
 </html>
